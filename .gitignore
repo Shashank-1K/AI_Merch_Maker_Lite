@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Java compiled files
+*.class
+
+# Node.js dependencies
+node_modules/
+
+# Database and log files
+*.db
+*.log
+
+# Generated output
+# /generated_products/

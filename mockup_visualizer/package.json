@@ -1,0 +1,9 @@
+{
+  "name": "mockup-visualizer",
+  "version": "1.0.0",
+  "description": "Creates product mockups.",
+  "main": "main.js",
+  "dependencies": {
+    "jimp": "0.16.1"
+  }
+}
