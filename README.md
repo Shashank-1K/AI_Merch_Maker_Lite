@@ -53,6 +53,76 @@ The application functions as a sophisticated, multi-language assembly line, wher
 
 -----
 
+## Visual Architecture
+
+Here is a visual representation of the project's architecture and workflow.
+
+```mermaid
+graph LR
+    %% --- 1. Style Definitions for a Professional Look ---
+    classDef coreSystem fill:#f0f7ff,stroke:#005cb8,stroke-width:2px,color:#222
+    classDef userStyle fill:#fff,stroke:#111,stroke-width:2px
+    classDef externalApi fill:#fff7e6,stroke:#f59e0b,stroke-width:2px
+    classDef datastore fill:#eee,stroke:#333,stroke-width:2px
+    
+    %% --- 2. Node & Subgraph Definitions in Logical Lanes ---
+    subgraph "ACTOR"
+        User("fa:fa-user User")
+    end
+
+    subgraph "AI MERCH MAKER LITE - CORE SYSTEM"
+        direction LR
+        subgraph "UI / Orchestrator"
+            A("fa:fa-desktop <b>Java GUI</b>")
+        end
+        subgraph "Processing Logic"
+            B("fa:fa-code Python Script")
+            C("fa:fa-cogs Node.js Script")
+        end
+        subgraph "Publishing Endpoint"
+            E("fa:fa-server PHP Server")
+        end
+    end
+
+    subgraph "EXTERNAL DEPENDENCIES"
+        subgraph "Third-Party AI APIs"
+            D1("fa:fa-brain Google Gemini")
+            D2("fa:fa-image Hugging Face")
+        end
+        subgraph "E-Commerce Platform"
+            F("fa:fa-cloud Shopify API")
+            G["fa:fa-database Shopify Store"]
+        end
+    end
+
+    %% --- 3. Workflow Connections with Clear Sequence ---
+    User -- "Step 1: Provides Theme" --> A
+    
+    A -- "Step 2: Generate Content" --> B
+    B -- "Step 3a: Fetch Text" --> D1
+    B -- "Step 3b: Fetch Image" --> D2
+    
+    A -- "Step 4: Generate Mockup" --> C
+
+    A -- "Step 5: Publish Product" --> E
+    E -- "Step 6: API Call" --> F
+    F -- "Step 7: Create in DB" --> G
+
+    %% --- Data Return Path (Un-numbered) ---
+    B -.-> |"Art & Text Data"| A
+    C -.-> |"Mockup Data"| A
+    F -.-> |"Success Response"| E
+    E -.-> |"Confirmation URL"| A
+
+    %% --- 4. Style Assignments ---
+    class User userStyle
+    class A,B,C,E coreSystem
+    class D1,D2,F externalApi
+    class G datastore
+    
+    %% --- 5. Link Style for Return Path ---
+    linkStyle 8,9,10,11 stroke:#555,stroke-width:2px,stroke-dasharray:3 3
+
 ## Deep Dive: The Shopify Integration
 
 The final and most critical step is handled by the **PHP Publishing Gateway**. This lightweight local server (`index.php`) acts as the bridge between the application and your Shopify store.
