@@ -81,7 +81,7 @@ graph LR
     
     %% --- 5. Link Style for Return Path ---
     linkStyle 8,9,10,11 stroke:#555,stroke-width:2px,stroke-dasharray:3 3
-'''
+```
 
 -----
 
