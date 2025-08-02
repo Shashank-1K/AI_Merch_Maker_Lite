@@ -17,3 +17,6 @@ node_modules/
 
 # Generated output
 # /generated_products/
+
+# Shopify credentials file
+product_publisher_php/config.php

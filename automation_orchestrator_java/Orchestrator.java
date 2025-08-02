@@ -1,5 +1,6 @@
 // automation_orchestrator_java/Orchestrator.java
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -14,9 +15,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Paths;
 import java.util.List;
-// import java.util.concurrent.ExecutionException;
 import java.nio.charset.StandardCharsets;
-
 import org.json.JSONObject;
 import org.json.JSONArray;
 
@@ -48,8 +47,22 @@ public class Orchestrator extends JFrame {
         logPane = new JTextPane();
         logPane.setContentType("text/html");
         logPane.setEditable(false);
+
+        // ** ADDED THIS BLOCK TO MAKE LINKS CLICKABLE **
+        logPane.addHyperlinkListener(e -> {
+            if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                if (Desktop.isDesktopSupported()) {
+                    try {
+                        Desktop.getDesktop().browse(e.getURL().toURI());
+                    } catch (Exception ex) {
+                        logHtml("<p class='error'>Could not open link: " + ex.getMessage() + "</p>");
+                    }
+                }
+            }
+        });
+
         StyleSheet styleSheet = ((HTMLDocument) logPane.getDocument()).getStyleSheet();
-        styleSheet.addRule("body { font-family: Segoe UI, sans-serif; margin: 5px; } h3 { margin-top: 10px; } p { margin: 0; font-size: 0.9em; }");
+        styleSheet.addRule("body { font-family: Segoe UI, sans-serif; margin: 5px; } h3 { margin-top: 10px; } p { margin: 0; font-size: 0.9em; } a { color: #0066cc; }");
         styleSheet.addRule(".success { color: #198754; } .error { color: #dc3545; } .info { color: #6c757d; } .detail { color: #0d6efd; font-weight: bold;}");
         imageLabel = new JLabel("Mockup will appear here", SwingConstants.CENTER);
         imageLabel.setPreferredSize(new Dimension(400, 400));
@@ -89,7 +102,6 @@ public class Orchestrator extends JFrame {
         generateButton.addActionListener(this::startPipeline);
     }
 
-    // ... (logHtml, displayImage, and startPipeline methods)
     private void logHtml(String html) {
         SwingUtilities.invokeLater(() -> {
             try {
@@ -128,20 +140,16 @@ public class Orchestrator extends JFrame {
         private final String theme;
         public PipelineWorker(String theme) { this.theme = theme; }
 
-
         @Override
         protected String doInBackground() throws Exception {
             publish("<h3>🚀 Pipeline Started</h3>");
-
-            // --- Step 1: Python (NOW with robust JSON parsing) ---
+            // --- Step 1: Python ---
             publish("<p class='info'>Running Python AI Content Generator...</p>");
             ProcessBuilder pythonPb = new ProcessBuilder("python", "../content_generator/main.py", theme);
             Process pythonProcess = pythonPb.start();
             String pythonOutput = new String(pythonProcess.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
             if (pythonProcess.waitFor() != 0) throw new RuntimeException("Python script failed.");
             publish("<p class='success'>✔️ Content generation complete.</p>");
-
-            // Use the JSON library to parse the output reliably
             JSONObject pythonJson = new JSONObject(pythonOutput);
             JSONObject details = pythonJson.getJSONObject("product_details");
             publish("details_title:" + details.getString("title"));
@@ -151,7 +159,6 @@ public class Orchestrator extends JFrame {
             publish("details_tags:" + tags);
             String artworkPath = pythonJson.getString("artwork_file");
             String absoluteArtworkPath = Paths.get(artworkPath).toAbsolutePath().toString();
-
             // --- Step 2: JavaScript ---
             publish("<h3>🎨 Mockup Creation</h3><p class='info'>Running JavaScript script...</p>");
             ProcessBuilder jsPb = new ProcessBuilder("node", "../mockup_visualizer/main.js", absoluteArtworkPath);
@@ -159,11 +166,8 @@ public class Orchestrator extends JFrame {
             String mockupOutput = new String(jsProcess.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
             if (jsProcess.waitFor() != 0) throw new RuntimeException("JavaScript script failed");
             publish("<p class='success'>✔️ Mockup created successfully.</p>");
-            
-            // Use the JSON library to get the mockup URL
             JSONObject mockupJson = new JSONObject(mockupOutput);
             publish("image:" + mockupJson.getString("mockup_url"));
-
             // --- Step 3: PHP ---
             publish("<h3>☁️ Publishing to Server</h3><p class='info'>Sending final data...</p>");
             String finalPayload = "{\"content_data\": " + pythonOutput + ", \"mockup_data\": " + mockupOutput + "}";
@@ -172,11 +176,9 @@ public class Orchestrator extends JFrame {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() != 201) throw new RuntimeException("PHP server returned error: " + response.body());
             publish("<p class='success'>✔️ Data published.</p>");
-            
             return response.body();
         }
 
-        // ... (process and done methods )
         @Override
         protected void process(List<String> chunks) {
             for (String chunk : chunks) {
@@ -190,13 +192,22 @@ public class Orchestrator extends JFrame {
         @Override
         protected void done() {
             try {
+                // ** THIS IS THE MODIFIED BLOCK **
                 String finalResult = get();
                 JSONObject serverResponse = new JSONObject(finalResult);
-                String formattedResponse = "Status: " + serverResponse.getString("status") + 
-                                           "<br>Message: " + serverResponse.getString("message") + 
-                                           "<br>Product ID: " + serverResponse.getString("product_id");
+                
+                StringBuilder responseBuilder = new StringBuilder();
+                responseBuilder.append("Status: ").append(serverResponse.getString("status"));
+                responseBuilder.append("<br>Message: ").append(serverResponse.getString("message"));
+                responseBuilder.append("<br>Product ID: ").append(serverResponse.getString("product_id"));
+
+                if (serverResponse.has("product_url")) {
+                    String url = serverResponse.getString("product_url");
+                    responseBuilder.append("<br>Product URL: <a href=\"").append(url).append("\">").append(url).append("</a>");
+                }
+                String formattedResponse = responseBuilder.toString();
                 logHtml("<h3>🎉 PIPELINE COMPLETED SUCCESSFULLY!</h3><p class='detail'>Server Response:</p><p class='info'>" + formattedResponse + "</p>");
-                // mainTabs.setSelectedIndex(1);
+                
             } catch (Exception e) {
                 String message = e.getCause() != null ? e.getCause().getMessage() : e.getMessage();
                 logHtml("<h3>❌ PIPELINE FAILED!</h3><p class='error'>" + message + "</p>");
