@@ -17,12 +17,13 @@ AI Merch Maker Lite bridges the gap between raw creativity and e-commerce. It is
 Here is a visual representation of the project's architecture and workflow.
 
 ```mermaid
+%%{init: { 'theme': 'dark' } }%%
 graph LR
-    %% --- 1. Style Definitions for a Professional Look ---
-    classDef coreSystem fill:#f0f7ff,stroke:#005cb8,stroke-width:2px,color:#222
-    classDef userStyle fill:#fff,stroke:#111,stroke-width:2px
-    classDef externalApi fill:#fff7e6,stroke:#f59e0b,stroke-width:2px
-    classDef datastore fill:#eee,stroke:#333,stroke-width:2px
+    %% --- 1. Style Definitions for High-Contrast Dark Mode ---
+    classDef coreSystem fill:#0d253f,stroke:#5fa8d3,stroke-width:2px,color:#fff
+    classDef userStyle fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+    classDef externalApi fill:#4d3d1f,stroke:#ffaa00,stroke-width:2px,color:#fff
+    classDef datastore fill:#4a5568,stroke:#a0aec0,stroke-width:2px,color:#fff
     
     %% --- 2. Node & Subgraph Definitions in Logical Lanes ---
     subgraph "ACTOR"
@@ -54,18 +55,18 @@ graph LR
         end
     end
 
-    %% --- 3. Workflow Connections with Clear Sequence ---
-    User -- "Step 1: Provides Theme" --> A
+    %% --- 3. Workflow Connections ---
+    User -- "Provides Theme" --> A
     
-    A -- "Step 2: Generate Content" --> B
-    B -- "Step 3a: Fetch Text" --> D1
-    B -- "Step 3b: Fetch Image" --> D2
+    A -- "Generate Content" --> B
+    B -- "Fetch Text" --> D1
+    B -- "Fetch Image" --> D2
     
-    A -- "Step 4: Generate Mockup" --> C
+    A -- "Generate Mockup" --> C
 
-    A -- "Step 5: Publish Product" --> E
-    E -- "Step 6: API Call" --> F
-    F -- "Step 7: Create in DB" --> G
+    A -- "Publish Product" --> E
+    E -- "API Call" --> F
+    F -- "Create in DB" --> G
 
     %% --- Data Return Path (Un-numbered) ---
     B -.-> |"Art & Text Data"| A
@@ -80,7 +81,7 @@ graph LR
     class G datastore
     
     %% --- 5. Link Style for Return Path ---
-    linkStyle 8,9,10,11 stroke:#555,stroke-width:2px,stroke-dasharray:3 3
+    linkStyle 8,9,10,11 stroke:#ccc,stroke-width:2px,stroke-dasharray:3 3
 ```
 
 -----
