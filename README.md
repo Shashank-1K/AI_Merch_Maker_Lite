@@ -2,12 +2,6 @@
 
 *Your Personal, Automated Print-on-Demand Factory.*
 
-AI Merch Maker Lite bridges the gap between raw creativity and e-commerce. It is a desktop application designed to eliminate the manual labor of creating and listing print-on-demand products. By leveraging a suite of modern AI tools and a polyglot architecture, this project transforms a simple text-based theme into a fully-realized, market-ready product in a Shopify store, all with a single click.
-
-# AI Merch Maker Lite
-
-*Your Personal, Automated Print-on-Demand Factory.*
-
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -87,6 +81,8 @@ graph LR
     
     %% --- 5. Link Style for Return Path ---
     linkStyle 8,9,10,11 stroke:#555,stroke-width:2px,stroke-dasharray:3 3
+'''
+
 -----
 
 ## Core Philosophy
