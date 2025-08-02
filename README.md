@@ -4,54 +4,19 @@
 
 AI Merch Maker Lite bridges the gap between raw creativity and e-commerce. It is a desktop application designed to eliminate the manual labor of creating and listing print-on-demand products. By leveraging a suite of modern AI tools and a polyglot architecture, this project transforms a simple text-based theme into a fully-realized, market-ready product in a Shopify store, all with a single click.
 
------
+# AI Merch Maker Lite
 
-## Core Philosophy
+*Your Personal, Automated Print-on-Demand Factory.*
 
-To empower creators by **automating the mundane**, freeing them to focus on high-level ideas, not repetitive execution. This tool acts as a tireless digital assistant, handling the entire product creation workflow from concept to publication.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Shopify](https://img.shields.io/badge/Shopify-96BF48?style=for-the-badge&logo=shopify&logoColor=white)
 
------
+AI Merch Maker Lite bridges the gap between raw creativity and e-commerce. It is a desktop application designed to eliminate the manual labor of creating and listing print-on-demand products. By leveraging a suite of modern AI tools and a polyglot architecture, this project transforms a simple text-based theme into a fully-realized, market-ready product in a Shopify store, all with a single click.
 
-## Key Features
-
-  - ✨ **AI-Powered Creativity**: Instantly generates compelling product titles, engaging descriptions, and SEO-friendly tags from a simple theme using Google's Gemini Pro.
-  - 🎨 **Unique Artwork on Demand**: Produces original, high-quality artwork using the Stable Diffusion model via the Hugging Face API, ensuring every product is visually distinct.
-  - 👕 **Automated Mockup Generation**: Dynamically composites the generated artwork onto a t-shirt template, providing an instant, realistic product mockup for your storefront.
-  - 🚀 **Direct-to-Store Publishing**: Seamlessly creates a new product in your Shopify store via API, complete with all generated text, artwork, mockup images, and metadata.
-  - 🖥️ **Unified Command Center**: A robust, multi-threaded Java Swing GUI acts as the central orchestrator, providing a clear user interface and a real-time log of the entire process.
-  - 🔗 **Interactive Feedback Loop**: The live log provides status updates for each stage and concludes with a clickable link that takes you directly to the newly created product in your Shopify admin panel.
-
------
-
-## The Digital Assembly Line: How It Works
-
-The application functions as a sophisticated, multi-language assembly line, where each component performs a specialized task before passing the product to the next stage.
-
-```plaintext
- [ User Input: Creative Theme ]
-              |
-              V
-[ 1. Java GUI Command Center ]
-     (Initiates Pipeline)
-              |
-              V
-[ 2. Python Content & Art Forge ] --- (Gemini & Hugging Face APIs)
-     (Generates Text & Artwork)
-              |
-              V
-[ 3. Node.js Mockup Studio ]
-     (Overlays Art on Template)
-              |
-              V
-[ 4. PHP Publishing Gateway ]
-     (Sends Final Product to Shopify)
-              |
-              V
-[ 5. Shopify Store ] --- (Shopify Admin API)
-     (New Product Appears as Draft)
-```
-
------
+---
 
 ## Visual Architecture
 
@@ -122,6 +87,55 @@ graph LR
     
     %% --- 5. Link Style for Return Path ---
     linkStyle 8,9,10,11 stroke:#555,stroke-width:2px,stroke-dasharray:3 3
+-----
+
+## Core Philosophy
+
+To empower creators by **automating the mundane**, freeing them to focus on high-level ideas, not repetitive execution. This tool acts as a tireless digital assistant, handling the entire product creation workflow from concept to publication.
+
+-----
+
+## Key Features
+
+  - ✨ **AI-Powered Creativity**: Instantly generates compelling product titles, engaging descriptions, and SEO-friendly tags from a simple theme using Google's Gemini Pro.
+  - 🎨 **Unique Artwork on Demand**: Produces original, high-quality artwork using the Stable Diffusion model via the Hugging Face API, ensuring every product is visually distinct.
+  - 👕 **Automated Mockup Generation**: Dynamically composites the generated artwork onto a t-shirt template, providing an instant, realistic product mockup for your storefront.
+  - 🚀 **Direct-to-Store Publishing**: Seamlessly creates a new product in your Shopify store via API, complete with all generated text, artwork, mockup images, and metadata.
+  - 🖥️ **Unified Command Center**: A robust, multi-threaded Java Swing GUI acts as the central orchestrator, providing a clear user interface and a real-time log of the entire process.
+  - 🔗 **Interactive Feedback Loop**: The live log provides status updates for each stage and concludes with a clickable link that takes you directly to the newly created product in your Shopify admin panel.
+
+-----
+
+## The Digital Assembly Line: How It Works
+
+The application functions as a sophisticated, multi-language assembly line, where each component performs a specialized task before passing the product to the next stage.
+
+```plaintext
+ [ User Input: Creative Theme ]
+              |
+              V
+[ 1. Java GUI Command Center ]
+     (Initiates Pipeline)
+              |
+              V
+[ 2. Python Content & Art Forge ] --- (Gemini & Hugging Face APIs)
+     (Generates Text & Artwork)
+              |
+              V
+[ 3. Node.js Mockup Studio ]
+     (Overlays Art on Template)
+              |
+              V
+[ 4. PHP Publishing Gateway ]
+     (Sends Final Product to Shopify)
+              |
+              V
+[ 5. Shopify Store ] --- (Shopify Admin API)
+     (New Product Appears as Draft)
+```
+
+-----
+
 
 ## Deep Dive: The Shopify Integration
 
