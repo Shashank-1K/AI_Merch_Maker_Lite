@@ -86,6 +86,26 @@ graph LR
 
 -----
 
+---
+
+## Project Showcase: A Step-by-Step Visual Walkthrough
+
+This section visually documents the entire project workflow, from generating an idea in the application to seeing a fully functional product on the live e-commerce store.
+
+| 1. Generation Success | 2. Details Captured | 3. Programmatic Upload |
+| :---: | :---: | :---: |
+| ![The application's command center after a successful run. The log confirms each stage completed, the final Shopify product URL is displayed, and the mockup is shown.](https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png) | ![The 'Product Details' tab within the application, demonstrating that the AI-generated title, description, and tags were successfully captured.](https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png) | ![The Shopify admin dashboard showing the new product appearing at the top of the list with a 'Draft' status, confirming the upload was successful.](https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png) |
+
+| 4. Reviewing the Draft | 5. Product Activated | 6. Live in the Catalog |
+| :---: | :---: | :---: |
+| ![Reviewing the new product in Shopify. The screen shows all AI-generated content populated correctly, with the status ready to be changed from 'Draft' to 'Active'.](https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png) | ![The product after its status has been manually changed to 'Active' in the Shopify admin, making it ready for the live storefront.](https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png) | ![The public-facing storefront catalog. The newly activated product now appears alongside other creations, available for customers to browse.](https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png) |
+
+| 7. Live Product Page | 8. Functional Checkout |
+| :---: | :---: |
+| ![The live customer view of a product page, demonstrating the final result with images, description, price, and the 'Add to cart' button.](https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png) | ![The final step of the e-commerce experience: a fully functional checkout page, localized for India, demonstrating the store is ready to process real orders.](https://i.ibb.co/f6wskgC/Screenshot-2025-08-03-232058.png) |
+
+---
+
 ## Core Philosophy
 
 To empower creators by **automating the mundane**, freeing them to focus on high-level ideas, not repetitive execution. This tool acts as a tireless digital assistant, handling the entire product creation workflow from concept to publication.
