@@ -92,17 +92,72 @@ graph LR
 
 This section visually documents the entire project workflow, from generating an idea in the application to seeing a fully functional product on the live e-commerce store.
 
-| 1. Generation Success | 2. Details Captured | 3. Programmatic Upload |
-| :---: | :---: | :---: |
-| ![The application's command center after a successful run. The log confirms each stage completed, the final Shopify product URL is displayed, and the mockup is shown.](https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png) | ![The 'Product Details' tab within the application, demonstrating that the AI-generated title, description, and tags were successfully captured.](https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png) | ![The Shopify admin dashboard showing the new product appearing at the top of the list with a 'Draft' status, confirming the upload was successful.](https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png) |
-
-| 4. Reviewing the Draft | 5. Product Activated | 6. Live in the Catalog |
-| :---: | :---: | :---: |
-| ![Reviewing the new product in Shopify. The screen shows all AI-generated content populated correctly, with the status ready to be changed from 'Draft' to 'Active'.](https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png) | ![The product after its status has been manually changed to 'Active' in the Shopify admin, making it ready for the live storefront.](https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png) | ![The public-facing storefront catalog. The newly activated product now appears alongside other creations, available for customers to browse.](https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png) |
-
-| 7. Live Product Page | 8. Functional Checkout |
-| :---: | :---: |
-| ![The live customer view of a product page, demonstrating the final result with images, description, price, and the 'Add to cart' button.](https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png) | ![The final step of the e-commerce experience: a fully functional checkout page, localized for India, demonstrating the store is ready to process real orders.](https://i.ibb.co/f6wskgC/Screenshot-2025-08-03-232058.png) |
+<table width="100%">
+  <tr>
+    <td align="center" valign="top">
+      <b>1. Generation Success</b><br><br>
+      <a href="https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png" target="_blank">
+        <img src="https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png" alt="GUI Success" width="100%">
+      </a>
+      <br><small><i>The application's command center after a successful run, showing the log, confirmation URL, and mockup.</i></small>
+    </td>
+    <td align="center" valign="top">
+      <b>2. Details Captured</b><br><br>
+      <a href="https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png" target="_blank">
+        <img src="https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png" alt="GUI Details Tab" width="100%">
+      </a>
+      <br><small><i>The 'Product Details' tab, demonstrating that the AI-generated title, description, and tags were successfully captured.</i></small>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <b>3. Programmatic Upload</b><br><br>
+      <a href="https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png" target="_blank">
+        <img src="https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png" alt="Shopify Product List" width="100%">
+      </a>
+      <br><small><i>The Shopify admin showing the new product with a 'Draft' status, confirming the programmatic upload was successful.</i></small>
+    </td>
+    <td align="center" valign="top">
+      <b>4. Reviewing the Draft</b><br><br>
+      <a href="https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png" target="_blank">
+        <img src="https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png" alt="Shopify Product in Draft" width="100%">
+      </a>
+      <br><small><i>Reviewing the new product in Shopify, with all AI-generated content populated and ready to be activated.</i></small>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <b>5. Product Activated</b><br><br>
+      <a href="https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png" target="_blank">
+        <img src="https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png" alt="Shopify Product Active" width="100%">
+      </a>
+      <br><small><i>The product after its status has been manually changed to 'Active' in the Shopify admin.</i></small>
+    </td>
+    <td align="center" valign="top">
+      <b>6. Live in the Catalog</b><br><br>
+      <a href="https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png" target="_blank">
+        <img src="https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png" alt="Live Store Catalog" width="100%">
+      </a>
+      <br><small><i>The public storefront catalog, now showing the newly activated product available for customers to browse.</i></small>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <b>7. Live Product Page</b><br><br>
+      <a href="https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png" target="_blank">
+        <img src="https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png" alt="Live Product Page" width="100%">
+      </a>
+      <br><small><i>The live customer view of a product page, featuring the images, description, price, and 'Add to cart' button.</i></small>
+    </td>
+    <td align="center" valign="top">
+      <b>8. Functional Checkout</b><br><br>
+      <a href="https://i.ibb.co/f4wskgC/Screenshot-2025-08-03-232058.png" target="_blank">
+        <img src="https://i.ibb.co/f6wskgC/Screenshot-2025-08-03-232058.png" alt="Live Checkout Page" width="100%">
+      </a>
+      <br><small><i>The fully functional checkout page, demonstrating the store is ready to process real orders.</i></small>
+    </td>
+  </tr>
+</table>
 
 ---
 
