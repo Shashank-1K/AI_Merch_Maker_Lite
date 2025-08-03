@@ -56,17 +56,17 @@ graph LR
     end
 
     %% --- 3. Workflow Connections ---
-    User -- "Provides Theme" --> A
+    User -- "Step 1: Provides Theme" --> A
     
-    A -- "Generate Content" --> B
-    B -- "Fetch Text" --> D1
-    B -- "Fetch Image" --> D2
+    A -- "Step 2: Generate Content" --> B
+    B -- "Step 3a: Fetch Text" --> D1
+    B -- "Step 3b: Fetch Image" --> D2
     
-    A -- "Generate Mockup" --> C
+    A -- "Step 4: Generate Mockup" --> C
 
-    A -- "Publish Product" --> E
-    E -- "API Call" --> F
-    F -- "Create in DB" --> G
+    A -- "Step 5: Publish Product" --> E
+    E -- "Step 6: API Call" --> F
+    F -- "Step 7: Create in DB" --> G
 
     %% --- Data Return Path (Un-numbered) ---
     B -.-> |"Art & Text Data"| A
