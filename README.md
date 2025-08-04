@@ -95,50 +95,50 @@ This section visually documents the entire project workflow, from generating an 
 <table width="100%">
   <tr>
     <td align="center" valign="top">
-      <b>1. Generation Success</b><br><br>
+      <b>1. GUI Success</b><br><br>
       <a href="https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png" target="_blank">
         <img src="https://i.ibb.co/rGjW5pt9/Screenshot-2025-08-03-230537.png" alt="GUI Success" width="100%">
       </a>
-      <br><small><i>The application's command center after a successful run, showing the log, confirmation URL, and mockup.</i></small>
+      <br><small><i>The application's command center after a successful run. The log on the left confirms each stage of the pipeline completed, and the final Shopify product URL is displayed. The generated t-shirt mockup is shown on the right.</i></small>
     </td>
     <td align="center" valign="top">
-      <b>2. Details Captured</b><br><br>
+      <b>2. GUI Details Tab</b><br><br>
       <a href="https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png" target="_blank">
         <img src="https://i.ibb.co/3m4RFg0n/Screenshot-2025-08-03-230548.png" alt="GUI Details Tab" width="100%">
       </a>
-      <br><small><i>The 'Product Details' tab, demonstrating that the AI-generated title, description, and tags were successfully captured.</i></small>
+      <br><small><i>The 'Product Details' tab within the application. This demonstrates that the AI-generated title, description, and tags were successfully captured and displayed by the GUI.</i></small>
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <b>3. Programmatic Upload</b><br><br>
+      <b>3. Programmatic Upload / Shopify Product List</b><br><br>
       <a href="https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png" target="_blank">
         <img src="https://i.ibb.co/CKtgbBkF/Screenshot-2025-08-03-230623.png" alt="Shopify Product List" width="100%">
       </a>
-      <br><small><i>The Shopify admin showing the new product with a 'Draft' status, confirming the programmatic upload was successful.</i></small>
+      <br><small><i>The Shopify admin dashboard. The newly created product ("Skyline Serenade") appears at the top of the list with a 'Draft' status, confirming the programmatic upload was successful.</i></small>
     </td>
     <td align="center" valign="top">
-      <b>4. Reviewing the Draft</b><br><br>
+      <b>4. Shopify Product in Draft</b><br><br>
       <a href="https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png" target="_blank">
         <img src="https://i.ibb.co/7JpyyPCj/Screenshot-2025-08-03-230851.png" alt="Shopify Product in Draft" width="100%">
       </a>
-      <br><small><i>Reviewing the new product in Shopify, with all AI-generated content populated and ready to be activated.</i></small>
+      <br><small><i>Reviewing the new product in Shopify. This screen shows all the AI-generated content (title, description, media) populated correctly, with the status ready to be changed from 'Draft' to 'Active'.</i></small>
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <b>5. Product Activated</b><br><br>
+      <b>5. Shopify Product Active</b><br><br>
       <a href="https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png" target="_blank">
         <img src="https://i.ibb.co/99xTm95C/Screenshot-2025-08-03-230956.png" alt="Shopify Product Active" width="100%">
       </a>
-      <br><small><i>The product after its status has been manually changed to 'Active' in the Shopify admin.</i></small>
+      <br><small><i>The product after its status has been manually changed to 'Active' in the Shopify admin, making it ready to be published to the live storefront.</i></small>
     </td>
     <td align="center" valign="top">
-      <b>6. Live in the Catalog</b><br><br>
+      <b>6. Live Store Catalog</b><br><br>
       <a href="https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png" target="_blank">
         <img src="https://i.ibb.co/SDmsf8vp/Screenshot-2025-08-03-232007.png" alt="Live Store Catalog" width="100%">
       </a>
-      <br><small><i>The public storefront catalog, now showing the newly activated product available for customers to browse.</i></small>
+      <br><small><i>The public-facing storefront catalog. The newly activated product now appears alongside other creations, available for customers to browse and purchase.</i></small>
     </td>
   </tr>
   <tr>
@@ -147,10 +147,10 @@ This section visually documents the entire project workflow, from generating an 
       <a href="https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png" target="_blank">
         <img src="https://i.ibb.co/8nVK6DB5/Screenshot-2025-08-03-232019.png" alt="Live Product Page" width="100%">
       </a>
-      <br><small><i>The live customer view of a product page, featuring the images, description, price, and 'Add to cart' button.</i></small>
+      <br><small><i>The live customer view of a product page. This demonstrates the final result, featuring the product images, description, price, and the "Add to cart" button.</i></small>
     </td>
     <td align="center" valign="top">
-      <b>8. Functional Checkout</b><br><br>
+      <b>8. Live Checkout Page</b><br><br>
       <a href="https://i.ibb.co/f4wskgC/Screenshot-2025-08-03-232058.png" target="_blank">
         <img src="https://i.ibb.co/f6wskgC/Screenshot-2025-08-03-232058.png" alt="Live Checkout Page" width="100%">
       </a>
